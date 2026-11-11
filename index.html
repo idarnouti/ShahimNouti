@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shahim Nouti | Soccer Star!</title>
+<meta name="description" content="Shahim Nouti - 7 years old, plays for North Calgary FC, loves SpongeBob and supports Spain.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffd92e'/%3E%3Ccircle cx='32' cy='32' r='20' fill='%23fff' stroke='%23222' stroke-width='3'/%3E%3Cpolygon points='32,22 41,29 38,40 26,40 23,29' fill='%23222'/%3E%3Cpath d='M32 22V12M41 29l10-4M38 40l7 9M26 40l-7 9M23 29l-10-4' stroke='%23222' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="images/portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sponge:#ffd92e; --sponge-d:#f2b705; --sea:#27b6e8; --sea-d:#0a6fa8; --deep:#06365c;
+  --red:#d7262e; --spain-y:#ffc400; --sand:#f6dc9b; --ink:#1d2b3a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#0a6fa8}
+body{
+  font-family:"Fredoka",system-ui,sans-serif; color:var(--ink); line-height:1.5;
+  background:linear-gradient(#7fdcff 0,#27b6e8 40%,#0a6fa8 100%) no-repeat;
+  overflow-x:hidden;
+}
+h1,h2,h3,.brand,.btn{font-family:"Bangers",cursive;letter-spacing:2px;font-weight:400}
+img{max-width:100%;display:block}
+
+/* bubbles */
+.bubbles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bubbles i{position:absolute;bottom:-60px;border-radius:50%;
+  background:radial-gradient(circle at 30% 30%,#fff9,#fff2 60%,#fff0);
+  border:2px solid #fff8;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) translateX(30px)}}
+
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+  padding:10px 5vw;background:var(--sponge);border-bottom:5px solid var(--sponge-d);box-shadow:0 4px 0 #0003}
+.brand{font-size:1.8rem;color:var(--red);text-shadow:2px 2px 0 #fff}
+.links a{font-family:"Fredoka";font-weight:700;color:var(--deep);text-decoration:none;margin-left:16px;font-size:1rem}
+.links a:hover{color:var(--red)}
+
+main{position:relative;z-index:1}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;padding:60px 6vw 90px;max-width:1150px;margin:0 auto}
+.eyebrow{display:inline-block;background:#fff;color:var(--red);font-weight:700;padding:4px 16px;border-radius:30px;border:3px solid var(--deep)}
+.hero h1{font-size:clamp(3.4rem,10vw,6.5rem);line-height:.95;color:var(--sponge);
+  -webkit-text-stroke:3px var(--deep);paint-order:stroke fill;text-shadow:5px 5px 0 var(--deep);margin:14px 0}
+.tagline{font-size:1.3rem;color:#fff;font-weight:600;text-shadow:2px 2px 0 var(--deep);margin-bottom:22px}
+.btn{display:inline-block;background:var(--red);color:#fff;font-size:1.5rem;padding:10px 30px;border-radius:40px;
+  text-decoration:none;border:4px solid var(--deep);box-shadow:0 6px 0 var(--deep);transition:.15s}
+.btn:hover{transform:translateY(3px);box-shadow:0 3px 0 var(--deep)}
+.polaroid{background:#fff;padding:12px 12px 16px;border:4px solid var(--deep);border-radius:12px;
+  transform:rotate(3deg);box-shadow:8px 8px 0 #0004;max-width:380px;margin:0 auto}
+.polaroid img{width:100%;border-radius:6px;aspect-ratio:4/5;object-fit:cover}
+.polaroid p{font-family:"Bangers";font-size:1.5rem;text-align:center;margin-top:8px;color:var(--red)}
+
+.wave{display:block;width:100%;height:60px;margin-top:-60px;position:relative;z-index:2}
+
+section{position:relative;z-index:1;padding:60px 6vw;max-width:1150px;margin:0 auto}
+h2{font-size:clamp(2.4rem,6vw,3.6rem);color:#fff;text-shadow:4px 4px 0 var(--deep);margin-bottom:26px}
+
+/* sponge-style cards */
+.card{background:var(--sponge);border:4px solid var(--sponge-d);border-radius:22px;padding:24px;
+  box-shadow:0 8px 0 var(--deep);position:relative;overflow:hidden;
+  background-image:radial-gradient(circle at 15% 20%,#e3a80055 0 7px,transparent 8px),
+                   radial-gradient(circle at 80% 30%,#e3a80055 0 9px,transparent 10px),
+                   radial-gradient(circle at 60% 85%,#e3a80055 0 6px,transparent 7px),
+                   radial-gradient(circle at 25% 80%,#e3a80055 0 10px,transparent 11px)}
+.card h3{font-size:2rem;color:var(--red);margin-bottom:6px}
+.card p{font-size:1.1rem;font-weight:600}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:26px}
+.fact{background:#fff;border:4px solid var(--deep);border-radius:18px;padding:14px;text-align:center;box-shadow:0 6px 0 var(--deep)}
+.fact b{display:block;font-size:2.2rem}
+.fact span{font-weight:700;color:var(--sea-d)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.logo-box{background:#fff;border:4px solid var(--deep);border-radius:18px;overflow:hidden;margin-bottom:16px}
+.logo-box img{width:100%}
+.frame{background:#fff;border:4px solid var(--deep);border-radius:16px;padding:8px;box-shadow:6px 6px 0 #0004}
+.frame img{width:100%;border-radius:8px;object-fit:cover}
+.frame figcaption{font-family:"Bangers";font-size:1.4rem;color:var(--red);text-align:center;padding-top:6px}
+.tilt1{transform:rotate(-2deg)}.tilt2{transform:rotate(2deg)}
+
+.spain{background:linear-gradient(180deg,var(--red) 0 25%,var(--spain-y) 25% 75%,var(--red) 75%);
+  border:5px solid var(--deep);border-radius:26px;padding:26px;box-shadow:0 10px 0 var(--deep)}
+.spain h2{margin-bottom:6px}
+.spain .lead{background:#fff;border:4px solid var(--deep);border-radius:16px;padding:14px 18px;font-weight:600;font-size:1.15rem;margin-bottom:22px;display:inline-block}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.trio img{aspect-ratio:3/4}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.gallery img{aspect-ratio:1/1;object-position:center 25%}
+
+.loves{display:flex;flex-wrap:wrap;gap:12px}
+.pill{background:#fff;border:4px solid var(--deep);border-radius:40px;padding:8px 20px;font-weight:700;font-size:1.15rem;box-shadow:0 5px 0 var(--deep)}
+
+.sea-floor{position:relative;z-index:1;background:var(--sand);margin-top:60px;padding:40px 6vw 30px;text-align:center;
+  font-weight:700;border-top:6px solid #d9b765;color:#6b4d12}
+.sea-floor .big{font-family:"Bangers";font-size:1.8rem;letter-spacing:2px;color:var(--red)}
+
+.jelly{position:absolute;width:70px;opacity:.9;animation:float 6s ease-in-out infinite;z-index:1}
+@keyframes float{50%{transform:translateY(-22px)}}
+
+@media(max-width:760px){
+  .hero,.two{grid-template-columns:1fr}
+  .hero{text-align:center;padding-top:40px}
+  .links a{margin-left:9px;font-size:.85rem}
+  .brand{display:none}
+  .jelly{display:none}
+}
+@media(prefers-reduced-motion:reduce){.bubbles i,.jelly{animation:none}}
+</style>
+</head>
+<body>
+<div class="bubbles" id="bubbles" aria-hidden="true"></div>
+
+<nav>
+  <span class="brand">SHAHIM</span>
+  <div class="links">
+    <a href="#about">About</a><a href="#soccer">Soccer</a><a href="#spain">Spain</a><a href="#fun">Fun</a><a href="#gallery">Photos</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero">
+  <div>
+    <span class="eyebrow">⚽ North Calgary FC &middot; Age 7</span>
+    <h1>Shahim<br>Nouti</h1>
+    <p class="tagline">Soccer player! Spain fan! Ready for adventure! 🫧</p>
+    <a class="btn" href="#soccer">Dive In!</a>
+  </div>
+  <div class="polaroid">
+    <img src="images/portrait.jpg" alt="Shahim smiling in his school photo">
+    <p>I'm ready!!</p>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <h3>Hi, I'm Shahim!</h3>
+    <p>I'm 7 years old and I play soccer for North Calgary Football Club. I love SpongeBob, and my favourite national team is Spain! 🇪🇸</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><b>⚽</b><span>North Calgary FC</span></div>
+    <div class="fact"><b>🇪🇸</b><span>Spain Supporter</span></div>
+    <div class="fact"><b>🧽</b><span>SpongeBob Fan</span></div>
+    <div class="fact"><b>🎂</b><span>7 Years Old</span></div>
+  </div>
+</section>
+
+<section id="soccer">
+  <h2>My Soccer</h2>
+  <div class="two">
+    <div class="card">
+      <div class="logo-box"><img src="images/logo.jpg" alt="North Calgary FC logo"></div>
+      <h3>North Calgary FC</h3>
+      <p>This is my club! I love running, passing and scoring goals with my team.</p>
+    </div>
+    <figure class="frame tilt2">
+      <img src="images/photo4.jpg" alt="Shahim holding a golden World Cup trophy replica" style="aspect-ratio:3/4">
+      <figcaption>Dreaming of the World Cup! 🏆</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="spain">
+  <div class="spain">
+    <h2>¡Vamos España! 🇪🇸</h2>
+    <p class="lead">Spain is my favourite team. Red and gold all the way!</p>
+    <div class="trio">
+      <figure class="frame tilt1"><img src="images/photo5.jpg" alt="Shahim in a Spain jersey"><figcaption>Spain fan!</figcaption></figure>
+      <figure class="frame tilt2"><img src="images/photo2.jpg" alt="Shahim in a Spain jersey and a racing helmet giving a thumbs up"><figcaption>Thumbs up!</figcaption></figure>
+      <figure class="frame tilt1"><img src="images/photo3.jpg" alt="Shahim in a Spain jersey next to a silver car"><figcaption>Number 19!</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="fun">
+  <h2>Things I Love</h2>
+  <div class="loves">
+    <span class="pill">⚽ Soccer</span>
+    <span class="pill">🧽 SpongeBob</span>
+    <span class="pill">🇪🇸 Spain</span>
+    <span class="pill">🏎️ Cool Cars</span>
+    <span class="pill">🍕 Pizza &amp; Fries</span>
+    <span class="pill">🏊 Swimming</span>
+    <span class="pill">🏆 Trophies</span>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>My Photos</h2>
+  <div class="gallery">
+    <figure class="frame tilt1"><img src="images/car.jpg" alt="Shahim posing in front of a yellow sports car"><figcaption>Yellow car!</figcaption></figure>
+    <figure class="frame tilt2"><img src="images/photo7.jpg" alt="Shahim in front of red Ferrari sports cars"><figcaption>Fast red cars</figcaption></figure>
+    <figure class="frame tilt1"><img src="images/photo1.jpg" alt="Shahim eating pizza and fries"><figcaption>Snack time 🍕</figcaption></figure>
+    <figure class="frame tilt2"><img src="images/photo6.jpg" alt="Shahim by the pool at sunset giving a thumbs up"><figcaption>Sunset splash</figcaption></figure>
+  </div>
+</section>
+</main>
+
+<footer class="sea-floor">
+  <p class="big">Thanks for visiting! 🫧</p>
+  <p>&copy; 2026 Shahim Nouti</p>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('bubbles');
+  for(var i=0;i<22;i++){
+    var e=document.createElement('i'), s=10+Math.random()*40;
+    e.style.cssText='left:'+Math.random()*100+'%;width:'+s+'px;height:'+s+'px;animation-duration:'+(9+Math.random()*14)+'s;animation-delay:'+(-Math.random()*20)+'s';
+    b.appendChild(e);
+  }
+})();
+</script>
+</body>
+</html>
